@@ -1,0 +1,29 @@
+{
+  "name": "blbot",
+  "version": "1.0.0",
+  "description": "AIO Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "~"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreaZeY/Discord-Bot.git"
+  },
+  "author": "GreaZeY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreaZeY/Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/GreaZeY/Discord-Bot#readme",
+  "dependencies": {
+    "discord-tts": "^1.0.3",
+    "discord.js": "^12.5.1",
+    "ffmpeg": "0.0.4",
+    "fs": "0.0.1-security",
+    "jimp": "^0.16.1",
+    "opus": "0.0.0",
+    "opusscript": "0.0.7",
+    "quick.db": "^7.1.3"
+  }
+}
