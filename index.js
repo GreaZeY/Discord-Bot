@@ -2,10 +2,6 @@ const Discord = require('discord.js');
 const config = require("./config.json")
 const bot = new Discord.Client();
 const ucr = new Set();
-const { Client, Util } = require('discord.js');
-const client = new Client({ disableEveryone: true });
-const fetch = require('node-fetch');
-const queue = new Map();
 const discordTTS=require("discord-tts");
 const fs = require("fs");
 bot.commands = new Discord.Collection();
@@ -13,8 +9,6 @@ const db = require('quick.db')
 var jimp = require('jimp');
 bot.on("error", (e) => console.error(e));
 bot.on("warn", (e) => console.warn(e));
-var grease = '<@609713401777618965>'
-const greaseid = '437348488846770208'
 const PREFIX = '~';
 const prefix = '~';
 var hc = 0;
@@ -41,7 +35,7 @@ bot.on('ready', () => {
 bot.on("message", function (message) {
     if (message.content.toLowerCase().startsWith(PREFIX + "addrole" + " ")) {
         if (message.guild === null) return;
-        let permission = message.member.hasPermission("MANAGE_MEMBERS");
+        let permission = message.member.hasPermission("MANAGE_ROLES");
         if (!permission) return message.channel.send("❌ You are missing the permission `Manage Roles`");
         let args = message.content.substring(PREFIX.length).split(" ");
         let rmember = message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[1]);
@@ -53,6 +47,7 @@ bot.on("message", function (message) {
         if (!grole) return message.reply("Can't find role "+role+"!")
         rmember.roles.add(grole.id)
         message.channel.send(`${rmember} you are now ${grole.name} in ${message.guild.name}`)
+
 
 
 
