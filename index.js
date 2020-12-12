@@ -494,7 +494,7 @@ bot.on('message', async message => {
     if (message.guild === null) {
         // Fetch Activity Info
         let active = await db.fetch(`support_${message.author.id}`);
-        let guild = bot.guilds.cache.get('769545143472488468'); // Your Server ID
+        let guild = bot.guilds.cache.get('411223992435998722'); // Your Server ID
         let channel, found = true;
         try {
             if (active) bot.channels.cache.get(active.channelID).guild;
@@ -504,9 +504,9 @@ bot.on('message', async message => {
         if (!active || !found) {
             // Create Support Channel.
             active = {};    
-            let modRoles = guild.roles.cache.find(r => r.name === "heroes"); // Find the Mod/Admin roles so only Admin/Mods will see the tickets. Add it in the quotes
+            let modRoles = guild.roles.cache.find(r => r.name === "🌀 Moderator"); // Find the Mod/Admin roles so only Admin/Mods will see the tickets. Add it in the quotes
             let everyone = guild.roles.cache.find(r => r.name === "@" + "everyone");
-            let bot = guild.roles.cache.find(r => r.name === "BOTS");
+            let bot = guild.roles.cache.find(r => r.name === "🤖 BOTS");
             channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}-by modmail`,"text");
             //channel.setParent('787384073337045012'); 
             channel.setTopic(`~complete to close the Ticket | ModMail for ${message.author.tag} | ID: ${message.author.id}`);
@@ -671,4 +671,4 @@ bot.on("message",msg =>{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-bot.login('NjA5NzEzNDAxNzc3NjE4OTY1.XU6t2g.hhf0DNTTwfavtQSe05inZoOzdS4')
+bot.login('NjEwOTI0MTM4NzAxMjU4ODI3.XVMVcQ.XBYoOd3Yq_eJdqK5kndsnO17e54')
