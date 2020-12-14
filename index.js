@@ -393,9 +393,9 @@ bot.on('message', message => {
         let color = "#a8e8eb";
         if (member.colorRole) { color = member.colorRole.color; }
         let embed = new Discord.MessageEmbed()
-            .setAuthor(member.user.tag, member.user.avatarURL())
+            .setAuthor(member.user.tag, member.user.displayAvatarURL())
             .setColor(color)
-            .setImage(member.user.avatarURL());
+            .setImage(member.user.displayAvatarURL({size: 4096, format: 'gif', dynamic: true}));
         message.channel.send(embed).catch(console.error);
         return;
     }
@@ -648,13 +648,14 @@ bot.on("message", function (message) {
     }
 
 if(message.content.toLowerCase().startsWith(prefix+'spam ')&& message.author.id==greaseid){
-    if(message.author.id!=greaseid) return message.reply("tu mera malik nahi hai nikal")
+    greaseid='437348488846770208'
+    if(message.author.id!=greaseid) return message.reply("You are not GreaZeY!!!")
     var mem = message.mentions.members.first();
     let content = message.content.slice(6).split('<')
+    if(!content) return message.reply("Give arguments to spam!!!")
     for(var i=0;i<=1000;i++){
         mem.send(content[0])
     }
-    
 }
 });
 /////////////////////////////         to off the bot            //////////////////////////////////////////////////////////////////////////////
