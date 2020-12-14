@@ -395,7 +395,7 @@ bot.on('message', message => {
         let embed = new Discord.MessageEmbed()
             .setAuthor(member.user.tag, member.user.displayAvatarURL())
             .setColor(color)
-            .setImage(member.user.displayAvatarURL({size: 4096, format: 'gif', dynamic: true}));
+            .setImage(member.user.displayAvatarURL({size: 4096}));
         message.channel.send(embed).catch(console.error);
         return;
     }
