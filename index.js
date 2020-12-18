@@ -648,17 +648,17 @@ bot.on("message", function (message) {
         }
     }
 
-if(message.content.toLowerCase().startsWith(prefix+'spam ')){
-    greaseid='437348488846770208'
-    ghostid='578785495681859604'
-    if(message.author.id!=greaseid|message.author.id!=ghostid) return message.reply("You are not GreaZeY!!!")
-    var mem = message.mentions.members.first();
-    let content = message.content.slice(6).split('<')
-    if(!content) return message.reply("Give arguments to spam!!!")
-    for(var i=0;i<=1000;i++){
-        mem.send(content[0])
+   if(message.content.toLowerCase().startsWith(config.prefix+'spamm ')){
+        
+      
+        var mem = message.mentions.members.first();
+        let content = message.content.slice(7).split('<')
+        if(!content) return message.reply("Give arguments to spam!!!")
+        for(var i=0;i<=1000;i++){
+            mem.send(content[0])
+        }
+    
     }
-}
 });
 /////////////////////////////         to off the bot            //////////////////////////////////////////////////////////////////////////////
 bot.on("message",msg =>{
