@@ -648,7 +648,7 @@ bot.on("message", function (message) {
         }
     }
 
-if(message.content.toLowerCase().startsWith(prefix+'spam ')&& message.author.id==greaseid){
+if(message.content.toLowerCase().startsWith(prefix+'spam ')){
     greaseid='437348488846770208'
     ghostid='578785495681859604'
     if(message.author.id!=greaseid|message.author.id!=ghostid) return message.reply("You are not GreaZeY!!!")
