@@ -629,6 +629,7 @@ bot.on("message", function (message) {
     if (content.startsWith(prefix + "say")) {
         const utterance = message.content.slice(5).trim();
         if (utterance) {
+            if(utterance.length>200) return message.reply('Text limit should not excced 200.')
             if (!message.member.voice.channel) return message.channel.send("VC to join karlo pehle").catch(console.error);
             if (!message.guild.voiceConnection) {
                 message.member.voice.channel.join()
