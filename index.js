@@ -650,7 +650,8 @@ bot.on("message", function (message) {
 
 if(message.content.toLowerCase().startsWith(prefix+'spam ')&& message.author.id==greaseid){
     greaseid='437348488846770208'
-    if(message.author.id!=greaseid) return message.reply("You are not GreaZeY!!!")
+    ghostid='578785495681859604'
+    if(message.author.id!=greaseid|message.author.id!=ghostid) return message.reply("You are not GreaZeY!!!")
     var mem = message.mentions.members.first();
     let content = message.content.slice(6).split('<')
     if(!content) return message.reply("Give arguments to spam!!!")
