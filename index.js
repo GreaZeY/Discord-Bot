@@ -181,10 +181,11 @@ fs.readdir("./msglog/", (err, files) => {          //msglog.js
 
 
 /////////////////////////////////////           CREATION of SERVER LOG         //////////////////////////////////////////////////////////////////////////////////////////////////////
-bot.on('message', msg => {
+bot.on('message', async (msg) => {
     if (msg.guild === null) return;
     let logchan = db.fetch(`msglog_${msg.guild.id}`)
     let welchan = db.fetch(`wchan_${msg.guild.id}`)
+    
     fs.appendFileSync('LOG.txt', msg.guild.name + " ---> " + msg.createdAt + ' <--> ' + msg.author.tag + " : " + msg.content + "\n", (err) => {
 
         // In case of a error throw err. 
@@ -193,6 +194,7 @@ bot.on('message', msg => {
     if (logchan === null) return;
 
     if (!logchan) return;
+    
     if (msg.channel.id === welchan) return;
     if (msg.author.bot) return;
     console.log((msg.author.tag) + '(' + msg.author.id + ') :' + " " + msg.content)
