@@ -88,6 +88,7 @@ bot.on("message", function (message) {
             .setFooter('by '+message.author.tag)
             .setColor("RANDOM")
             .setDescription(`**${msg}**`)
+        ch.send('@everyone')
         ch.send(embed);
     }
 
