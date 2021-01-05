@@ -511,7 +511,7 @@ bot.on('message', async message => {
             let bot = guild.roles.cache.find(r => r.name === "🤖 BOTS");
             channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}-by modmail`,"text");
             //channel.setParent('787384073337045012'); 
-            channel.setTopic(`~complete to close the Ticket | ModMail for ${message.author.tag} | ID: ${message.author.id}`);
+            channel.setTopic(`~close to close the Ticket | ModMail for ${message.author.tag} | ID: ${message.author.id}`);
             channel.updateOverwrite(modRoles, {
                 VIEW_CHANNEL: true,
                 SEND_MESSAGES: true,
@@ -573,7 +573,7 @@ bot.on('message', async message => {
         if (!supportUser) return message.channel.delete();
 
         // !complete command
-        if (message.content.toLowerCase() === "mm.close") {
+        if (message.content.toLowerCase() === "~close") {
             const complete = new Discord.MessageEmbed()
                 .setColor('36393E')
                 .setAuthor(`Hey, ${supportUser.tag}`, supportUser.avatarURL())
