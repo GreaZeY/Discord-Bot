@@ -152,7 +152,7 @@ bot.on("message", function (message) {
             .setFooter("***Now say thanks to me 😊***")
             .setDescription("**About Modmail**")
             .addField('**Modmail** ', '**ModMail is a feature designed to enable your server members to contact staff easily. A new channel is created whenever a user messages the bot, and the channel will serve as a shared inbox for seamless communication between staff and the user.**')
-            .addField('`mm.close`','to close the modmail ticket for a user.')
+            .addField('`~close`','to close the modmail ticket for a user.')
             .addField('***Created by***', '**GreaZeY#9750**')
             .setColor("RANDOM")
         message.author.send(embed);
@@ -491,7 +491,6 @@ bot.on('message', message => {
 
 bot.on('message', async message => {
     if (message.author.bot) return;
-    if(message.content.startsWith(prefix)) return;
     // Check if Message is in a DM
     if (message.guild === null) {
         // Fetch Activity Info
