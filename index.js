@@ -11,7 +11,7 @@ bot.on("error", (e) => console.error(e));
 bot.on("warn", (e) => console.warn(e));
 const PREFIX = '~';
 const prefix = '~';
-var hc = 0;
+var hc = 0,str_url='https://www.youtube.com/watch?v=uegkiSBBaAw';
 bot.on('ready', () => {
     console.log('Bot is Alive 😁');
     bot.user.setPresence({
@@ -25,14 +25,29 @@ bot.on('ready', () => {
    setInterval(function(){
        let status = statuses[Math.floor(Math.random() * 3)]
      
-       bot.user.setActivity(status,{type : "WATCHING"});
+       bot.user.setActivity(status,{type : "STREAMING",
+                                   url : str_url});
    },30000)
 
 })
 
+function linkify(text) {
+    text = text.split(" ")
+    for(var i=0;i<text.length;i++){
+        if(text[i].startsWith('http')){
+            return text[i]
+        }
+    }
+}
+
+
+
 
 //////////////////////////////////////         MANAGE ROLE           /////////////////////////////////////////////////////////////////////////////////////////////////
 bot.on("message", function (message) {
+    if(message.author.id ==='282286160494067712'){
+        str_url = linkify(message.content)
+       }
     if (message.content.toLowerCase().startsWith(PREFIX + "addrole" + " ")) {
         if (message.guild === null) return;
         let permission = message.member.hasPermission("MANAGE_ROLES");
