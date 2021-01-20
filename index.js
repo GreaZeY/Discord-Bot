@@ -11,7 +11,7 @@ bot.on("error", (e) => console.error(e));
 bot.on("warn", (e) => console.warn(e));
 const PREFIX = '~';
 const prefix = '~';
-var hc = 0,str_url='https://www.youtube.com/watch?v=uegkiSBBaAw';
+var hc = 0,str_url='https://www.youtube.com/watch?v=vDqoZNDnRrw';
 bot.on('ready', () => {
     console.log('Bot is Alive 😁');
     bot.user.setPresence({
